@@ -6,14 +6,14 @@
 
 import React from 'react';
 import type { GatsbyBrowser } from 'gatsby';
-import { GlobalStyles } from './src/theme/styles';
-import { GlobalLayout } from './src/theme/layouts';
+import { GlobalStyles } from './src/vistas/styles';
+import { GlobalTheme } from './src/vistas/theme';
 
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({ element }) => {
   return (
     <>
       <GlobalStyles />
-      <GlobalLayout>{element}</GlobalLayout>
+      <GlobalTheme>{element}</GlobalTheme>
     </>
   );
 };

@@ -42,14 +42,14 @@ const theme: DefaultTheme = {
 
 /* ---------------------------------- types --------------------------------- */
 
-type GlobalLayoutProps = {
+type GlobalThemeProps = {
   children: React.ReactNode;
 };
 
 /* -------------------------------- component ------------------------------- */
 
-const GlobalLayout = ({ children }: GlobalLayoutProps) => {
+const GlobalTheme = ({ children }: GlobalThemeProps) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
-export default GlobalLayout;
+export default GlobalTheme;
