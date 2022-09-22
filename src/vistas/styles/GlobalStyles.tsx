@@ -4,7 +4,13 @@ import { Normalize } from 'styled-normalize';
 
 /* --------------------------------- styles --------------------------------- */
 
-const GlobalStyle = createGlobalStyle``;
+const GlobalStyle = createGlobalStyle`
+  html, body, #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+    min-width: 280px;
+    position: relative;
+  }
+`;
 
 /* -------------------------------- component ------------------------------- */
 
