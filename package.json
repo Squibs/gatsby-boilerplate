@@ -12,8 +12,8 @@
     "start": "npm run clean && npm run develop",
     "build": "npm run clean && gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "serve": "gatsby serve -H 0.0.0.0",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
