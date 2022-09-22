@@ -8,8 +8,16 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
-    `gatsby-plugin-image`,
     {
+      // used to point to where pages folder is for gatsby
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `src/structures/pages`,
+      },
+    },
+    `gatsby-plugin-image`, // produces images in multiple sizes
+    {
+      // sourcing data into your Gatsby application from your local filesystem
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -19,6 +27,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`, // image processing functions from the sharp image processing library
     `gatsby-transformer-sharp`, // creates image-sharp nodes from image types supported by the sharp image processing library
     {
+      // gatsby manifest generation
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `squibs-gatsby-starter`,
