@@ -3,28 +3,9 @@ import { graphql, Link } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { SEO } from '../components';
+import { PageContainer } from '../containers';
 
 /* --------------------------------- styles --------------------------------- */
-
-const TESTDIV = styled.div`
-  background-color: ${({ theme }) => theme.colors.primaryDark};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  color: ${({ theme }) => theme.colors.whiteTint};
-
-  & .snail {
-    display: none;
-  }
-
-  ${({ theme }) => theme.breakpoints.for3TabletPortraitUp()`
-    & .snail {
-      display: initial;
-    }
-  `}
-`;
 
 const ImageContainer = styled.div`
   display: flex;
@@ -32,9 +13,17 @@ const ImageContainer = styled.div`
   width: 100%;
   height: 500px;
 
+  & .snail {
+    display: none;
+  }
+
   & * {
     margin: 5px;
   }
+
+  ${({ theme }) => theme.breakpoints.for3TabletPortraitUp()`
+    & .snail { display: initial; }
+  `}
 `;
 
 const StyledLink = styled(Link)`
@@ -66,16 +55,18 @@ const IndexPage = ({ data }: IndexPageProps) => {
   const eel = data.Eel.publicURL;
 
   return (
-    <TESTDIV>
+    <PageContainer>
       <h1>Squibs&apos; Gatsby Starter</h1>
       <ImageContainer>
         <GatsbyImage class="snail" image={snail} alt="" />
         <img src={eel} alt="" />
       </ImageContainer>
       <StyledLink to="/pageTwo">Go to Page 2</StyledLink>
-    </TESTDIV>
+    </PageContainer>
   );
 };
+
+/* -------------------- default props / queries / exports ------------------- */
 
 export default IndexPage;
 

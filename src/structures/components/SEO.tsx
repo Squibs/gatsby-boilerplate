@@ -45,6 +45,8 @@ const SEO = ({ description, title, children }: SEOProps) => {
   );
 };
 
+/* -------------------- default props / queries / exports ------------------- */
+
 SEO.defaultProps = {
   description: ``,
   children: null,
